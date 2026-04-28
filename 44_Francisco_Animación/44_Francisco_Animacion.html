@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: skyblue;
+        }
+
+        .cont {
+            position: relative;  
+            width: 100%;
+            height: 500px;     
+        }
+        .sol{
+            background: radial-gradient(circle, #fff7a1, #FFD700, #ffa93f);
+            box-shadow:
+                0 0 40px  20px  rgba(255, 200, 0, 0.6),   
+                0 0 80px  40px  rgba(255, 150, 0, 0.4),   
+                0 0 140px 70px  rgba(255, 100, 0, 0.2),   
+                0 0 200px 100px rgba(255, 50,  0, 0.1);   
+            border-radius: 50%;
+            border: 5px ;
+            position: absolute;
+            right: 10%;
+            top: 10%;
+            width: 80px;
+            height: 80px;
+        }
+
+        .nube {
+            position: absolute;
+            width: 200%;
+            height: 150%;       
+            background-image: url("img/cielo2.png");
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            animation-name: nubes;
+            animation-duration: 30s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            left: -100%;
+        }
+
+        .agua {
+            position: absolute;
+            width: 200%;
+            height: 400px;          
+            background-image: url("img/olas2.png");
+            background-size: cover;
+            background-position: center;
+            z-index: 2;
+            bottom: -73%;
+            left: -100%;
+            animation-name: olas;
+            animation-duration: 15s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+        }
+
+        .playa {
+            position: absolute;
+            width: 70%;
+            height: 100%;
+            bottom: 0;           
+            background-image: url("img/playa2.png");
+            background-size: cover;
+            background-position: center;
+            z-index: 3;
+            bottom: -73%;
+            left: -10px;
+            animation-name: playa;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        @keyframes nubes{
+            0%{
+                transform: translateX(0);
+            }
+            100%{
+                transform: translateX(50%);
+            }
+        }
+        @keyframes playa{
+            0%{
+                transform: translateX(0px);
+                transform: scale(100%);
+            }
+            100%{
+                transform: translateX(10px);
+                transform: scale(105%);
+            }
+        }
+        @keyframes olas{
+            0%{
+                transform: translateX(0px);
+            }
+            100%{
+                transform: translateX(50%);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <div class="nube"></div>
+        <div class="agua"></div>
+        <div class="playa"></div>
+        <div class="sol"></div>
+    </div>
+</body>
+</html>
